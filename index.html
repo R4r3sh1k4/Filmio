@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" href="/SiteIcon.png" />
+    <link rel="apple-touch-icon" href="/SiteIcon.png" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>site-test-one</title>
+
+    
+    <script>
+      (function() {
+        const prefersLight = window.matchMedia('(prefers-color-scheme: light)').matches;
+        document.documentElement.style.backgroundColor = prefersLight ? '#ffffff' : '#242424';
+        document.documentElement.style.color = prefersLight ? '#213547' : 'rgba(255, 255, 255, 0.87)';
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>

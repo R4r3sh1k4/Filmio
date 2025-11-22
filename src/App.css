@@ -1,0 +1,59 @@
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100%;
+  /* allow scrolling instead of hiding overflow */
+  overflow: auto;
+  background: transparent; /* Canvas shows through */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* keep body natural flow so the page can scroll; center main via its own rules */
+body {
+  min-height: 100vh;
+}
+
+main {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 1rem;
+  /* keep clear sides: card width is at most 900px and leaves at least 48px margin each side */
+  width: min(900px, calc(100% - 96px));
+  margin: 70px auto;
+  pointer-events: auto;
+  /* subtle semi-transparent gray card to improve readability on the noisy canvas */
+  background: rgba(20, 20, 20, 0.65);
+  border-radius: 12px;
+  /* slim darker gray border that's more visible but still subtle */
+  border: 1px solid rgba(0, 0, 0, 0.75);
+  box-shadow: 0 8px 30px rgba(2, 6, 23, 0.55);
+  backdrop-filter: blur(6px) saturate(1.05);
+}
+
+@media (max-width: 520px) {
+  main {
+    width: calc(100% - 32px);
+    margin: 70px auto;
+    padding: 1rem;
+    border-radius: 10px;
+  }
+}
+
+h1 {
+  color: white;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.6); /* improves contrast on noisy background */
+}
+
+/* respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

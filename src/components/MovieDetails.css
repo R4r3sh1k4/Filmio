@@ -1,0 +1,56 @@
+.movie-details { 
+max-width: 1000px;
+margin: 0 auto;
+padding: 1rem;
+}
+
+.back-button {
+background: #2563eb;
+color: #fff;
+border: none;
+padding: 0.5rem 1rem;
+border-radius: 6px;
+font-size: 14px;
+cursor: pointer;
+margin-bottom: 1rem;
+}
+.back-button:hover {
+background: #1d4ed8;
+}
+
+.details-layout {
+display: flex;
+flex-direction: column;
+gap: 1.25rem;
+}
+@media (min-width: 760px) {
+.details-layout {
+flex-direction: row;
+align-items: flex-start;
+}
+}
+
+.poster-wrapper img {
+width: 100%;
+max-width: 340px;
+border-radius: 12px;
+box-shadow: 0 4px 18px rgba(0,0,0,0.4);
+}
+
+.info h1 {
+margin: 0 0 0.5rem;
+font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+.meta {
+display: flex;
+flex-wrap: wrap;
+gap: 0.75rem;
+font-size: 0.85rem;
+opacity: 0.85;
+margin: 0 0 1rem;
+}
+.overview {
+line-height: 1.5;
+font-size: 0.95rem;
+opacity: 0.92;
+}
